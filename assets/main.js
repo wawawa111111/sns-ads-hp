@@ -101,6 +101,19 @@
     snd.querySelector('.lb').textContent = reel.muted ? '音声をオンにする' : '音声をオフにする';
   });
 
+  // 紹介動画を大きく再生する（音あり）。閉じたら止める
+  const modal = document.getElementById('reel-modal'), full = document.getElementById('reel-full');
+  if (modal && full) {
+    document.querySelectorAll('.js-play').forEach(btn => btn.addEventListener('click', () => {
+      modal.showModal(); full.currentTime = 0; full.muted = false; full.play().catch(() => {});
+      if (reel) reel.pause();
+    }));
+    const close = () => modal.close();
+    document.getElementById('reel-close').addEventListener('click', close);
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    modal.addEventListener('close', () => { full.pause(); if (reel) reel.play().catch(() => {}); });
+  }
+
   // お問い合わせフォーム（下書き版のため送信はしない）
   const form = document.getElementById('contact-form');
   if (form) form.addEventListener('submit', e => {

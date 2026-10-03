@@ -14,31 +14,34 @@
 <div id="site-header"></div>
 
 <main>
-  <!-- ファーストビュー：薄くした動画を背景に、名前とページへのタグ -->
+  <!-- ファーストビュー：右側に動画が見える背景＋強い見出し＋再生ボタン -->
   <section class="fv-hero">
     <video class="fv-bgv" id="fv-reel" src="assets/reel.mp4" poster="assets/reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
     <div class="fv-shade" aria-hidden="true"></div>
     <div class="wrap fv-hero-in">
-      <div class="fv-top rv">
-        <p class="fv-kicker en">SOCIAL MEDIA ADS OPERATOR</p>
-        <p class="fv-kicker en dim">BASED IN KUMAMOTO, JP</p>
-      </div>
-      <h1 class="fv-name en rv d1"><span>HARUHITO</span><span class="ol">HASHIMOTO<i>.</i></span></h1>
-      <div class="fv-grid rv d2">
-        <div class="fv-jp">
-          <p class="jp">SNS広告運用の　橋本 晴仁</p>
-          <p class="tag en">Instagram &amp; Facebook ads — planned, built,<br>tested and reported every week.</p>
+      <div class="fv-main">
+        <p class="fv-badge2 rv"><span>SNS広告運用代行</span><em class="en">INSTAGRAM × FACEBOOK ADS</em></p>
+        <h1 class="fv-head rv d1"><span class="ln"><b>SNS広告</b>の運用、</span><span class="ln">代行します。</span></h1>
+        <ul class="fv-chips rv d2" aria-label="対応内容">
+          <li>Instagram広告</li><li>Facebook広告</li><li>バナー・動画制作</li><li>効果測定</li><li>毎週のレポート</li>
+        </ul>
+        <p class="fv-who2 rv d2"><span class="en">HARUHITO HASHIMOTO</span>橋本 晴仁 ／ 熊本大学 DS総合コース 3年</p>
+        <div class="fv-btns rv d3">
+          <button type="button" class="btn btn-accent js-play"><span class="tri" aria-hidden="true"></span>紹介動画を見る（15秒）</button>
+          <a href="contact.html" class="btn btn-ghost-w">30分の無料相談<span class="arw"></span></a>
         </div>
-        <nav class="fv-index" aria-label="ページへのリンク">
-          <a href="service.html"><span class="no en">(01)</span><span class="en">SERVICE</span><small>サービス</small></a>
-          <a href="works.html"><span class="no en">(02)</span><span class="en">WORKS</span><small>実績・進め方</small></a>
-          <a href="about.html"><span class="no en">(03)</span><span class="en">ABOUT</span><small>プロフィール</small></a>
-          <a href="contact.html"><span class="no en">(04)</span><span class="en">CONTACT</span><small>お問い合わせ</small></a>
-        </nav>
       </div>
-      <div class="fv-foot en rv d3"><span><i class="live"></i>OPEN FOR CONSULTATION — 30 MIN, FREE</span><span>SCROLL ↓</span></div>
+      <button type="button" class="fv-play js-play" aria-label="紹介動画を再生する（15秒・音あり）">
+        <span class="ring" aria-hidden="true"></span><span class="tri" aria-hidden="true"></span>
+        <span class="lab en">PLAY REEL<small>15s / SOUND ON</small></span>
+      </button>
     </div>
   </section>
+  <!-- 紹介動画を大きく再生する画面 -->
+  <dialog class="reel-modal" id="reel-modal" aria-label="紹介動画">
+    <button type="button" class="reel-close" id="reel-close" aria-label="閉じる">×</button>
+    <video id="reel-full" src="assets/reel.mp4" poster="assets/reel-poster.jpg" controls playsinline preload="none"></video>
+  </dialog>
 
   <!-- メッセージ -->
   <section class="sec white">
