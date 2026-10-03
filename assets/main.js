@@ -41,6 +41,7 @@
       <div class="ft-bottom"><span>© ${new Date().getFullYear()} Haruhito Hashimoto</span><a href="#" class="pagetop">PAGE TOP ↑</a></div>
     </div>
   </footer>
+  <a href="about.html" class="about-tag"${page==='about'?' aria-current="page"':''}><span class="dot" aria-hidden="true"></span><span class="en">ABOUT</span><small>橋本 晴仁について</small></a>
   <div class="sp-cta" id="spcta"><a href="contact.html" class="btn btn-accent">無料で相談する<span class="arw"></span></a></div>`;
 
   // ヘッダーの影・スマホの下部ボタン

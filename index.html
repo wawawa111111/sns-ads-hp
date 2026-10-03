@@ -14,11 +14,30 @@
 <div id="site-header"></div>
 
 <main>
-  <!-- ファーストビュー：自己紹介動画のみ -->
-  <section class="fv-movie">
-    <h1 class="sr">SNS広告の運用を、代行します。熊本大学 情報融合学環 DS総合コース 3年 橋本 晴仁</h1>
-    <video id="fv-reel" src="assets/reel.mp4" poster="assets/reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="自己紹介動画（15秒）：SNS広告の運用代行、熊本大学の学生、橋本 晴仁、できること"></video>
-    <button type="button" class="fv-sound" id="fv-sound" aria-pressed="false"><span class="ic" aria-hidden="true"></span><span class="lb">音声をオンにする</span></button>
+  <!-- ファーストビュー：薄くした動画を背景に、名前とページへのタグ -->
+  <section class="fv-hero">
+    <video class="fv-bgv" id="fv-reel" src="assets/reel.mp4" poster="assets/reel-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+    <div class="fv-shade" aria-hidden="true"></div>
+    <div class="wrap fv-hero-in">
+      <div class="fv-top rv">
+        <p class="fv-kicker en">SOCIAL MEDIA ADS OPERATOR</p>
+        <p class="fv-kicker en dim">BASED IN KUMAMOTO, JP</p>
+      </div>
+      <h1 class="fv-name en rv d1"><span>HARUHITO</span><span class="ol">HASHIMOTO<i>.</i></span></h1>
+      <div class="fv-grid rv d2">
+        <div class="fv-jp">
+          <p class="jp">SNS広告運用の　橋本 晴仁</p>
+          <p class="tag en">Instagram &amp; Facebook ads — planned, built,<br>tested and reported every week.</p>
+        </div>
+        <nav class="fv-index" aria-label="ページへのリンク">
+          <a href="service.html"><span class="no en">(01)</span><span class="en">SERVICE</span><small>サービス</small></a>
+          <a href="works.html"><span class="no en">(02)</span><span class="en">WORKS</span><small>実績・進め方</small></a>
+          <a href="about.html"><span class="no en">(03)</span><span class="en">ABOUT</span><small>プロフィール</small></a>
+          <a href="contact.html"><span class="no en">(04)</span><span class="en">CONTACT</span><small>お問い合わせ</small></a>
+        </nav>
+      </div>
+      <div class="fv-foot en rv d3"><span><i class="live"></i>OPEN FOR CONSULTATION — 30 MIN, FREE</span><span>SCROLL ↓</span></div>
+    </div>
   </section>
 
   <!-- メッセージ -->
