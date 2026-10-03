@@ -1,0 +1,10 @@
+# 公開するのはサイト本体（5ページと assets）のみ
+*
+!.gitignore
+!index.html
+!service.html
+!works.html
+!about.html
+!contact.html
+!assets/
+!assets/**
