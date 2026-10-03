@@ -87,6 +87,19 @@
     addEventListener('scroll', upd, {passive:true}); upd();
   });
 
+  // ファーストビューの動画：音声のオン・オフ
+  const reel = document.getElementById('fv-reel'), snd = document.getElementById('fv-sound');
+  if (reel) {                                  // 自動再生が止められた場合に備え、画面に入ったら再生し直す
+    reel.muted = true; reel.play().catch(() => {});
+    new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && reel.paused) reel.play().catch(() => {}); })).observe(reel);
+  }
+  if (reel && snd) snd.addEventListener('click', () => {
+    reel.muted = !reel.muted;
+    if (!reel.muted) { reel.currentTime = 0; reel.play(); }
+    snd.setAttribute('aria-pressed', String(!reel.muted));
+    snd.querySelector('.lb').textContent = reel.muted ? '音声をオンにする' : '音声をオフにする';
+  });
+
   // お問い合わせフォーム（下書き版のため送信はしない）
   const form = document.getElementById('contact-form');
   if (form) form.addEventListener('submit', e => {
