@@ -89,6 +89,10 @@ body.menu-open .menu-btn span:nth-child(3){transform:translateY(-5px) rotate(-45
 .fv-tags li{font-size:13px;font-weight:700;color:var(--navy);background:var(--white);border:1px solid var(--line);border-radius:999px;padding:5px 14px}
 .fv-tags li:nth-child(-n+2){border-color:var(--accent);color:var(--accent-d);background:var(--accent-soft)}
 .fv-big{position:absolute;right:32px;top:28px;font-family:var(--en);font-weight:800;font-size:clamp(56px,7vw,104px);line-height:.9;text-align:right;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.22);letter-spacing:.02em}
+/* ファーストビュー：動画のみ（画面の幅いっぱい・16:9。画面が低いときは高さに合わせて左右に黒い余白） */
+.fv-movie{position:relative;background:#0B0B0C;display:flex;justify-content:center}
+.fv-movie video{display:block;width:100%;max-width:calc((100vh - 110px) * 16 / 9);aspect-ratio:16/9;object-fit:cover;background:#0B0B0C}
+.fv-movie .fv-sound{right:24px;bottom:24px}
 /* ファーストビューの紹介動画 */
 .fv-video{position:absolute;left:9%;right:7%;top:50%;transform:translateY(-50%);margin:0;z-index:2}
 .fv-video video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;background:#0B0B0C;box-shadow:0 30px 60px rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.12)}
@@ -419,6 +423,7 @@ body.menu-open .menu-btn span:nth-child(3){transform:translateY(-5px) rotate(-45
   .fv-big{font-size:48px;right:18px;top:18px}
   .fv-tags li{font-size:12px;padding:4px 11px}
   .fv-sound{right:10px;bottom:38px;padding:8px}
+  .fv-movie .fv-sound{right:10px;bottom:10px}
   .fv-sound .lb{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
   .fv-video{left:6%;right:6%}
   .head{margin-bottom:36px}
